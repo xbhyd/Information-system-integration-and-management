@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.httpserver.mapper.firmMapper">
+    <!-- 定义 Firm 的结果映射 -->
+    <resultMap id="FirmResultMap" type="com.example.httpserver.entity.firm">
+        <result property="firmname" column="firmname"/>
+        <result property="latitude" column="latitude"/>
+        <result property="longitude" column="longitude"/>
+        <!-- 如果有更多字段，继续添加 -->
+    </resultMap>
+    <select id="getFirm" resultMap="FirmResultMap" resultType="com.example.httpserver.entity.firm">
+        SELECT * FROM firm
+    </select>
+</mapper>
